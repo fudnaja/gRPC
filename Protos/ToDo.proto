@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+option csharp_namespace = "ToDoGrpcSerice.Protos";
+
+service ToDoService{
+rpc getToDoItem(google.protobuf.Empty) returns (ToDoModel);
+rpc getMessageItem(google.protobuf.Empty) returns (TestModel);
+}
+
+message ToDoModel{
+	string Title=1;;
+	string Description=2;
+	bool status=3;
+}
+
+message TestModel{
+	string ID=1;
+	string Message=2;
+}
